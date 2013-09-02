@@ -1,0 +1,339 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1250">
+<script src="js/jquery.js"></script>
+	<script src="js/jquery.cycle2.min.js"></script>
+	<script src="js/jquery.cycle2.swipe.min.js"></script>
+<script type="text/javascript">
+
+	  WebFontConfig = {
+	    google: { families: [ 'Cabin:400,600,700,400italic,600italic,700italic:latin', 'Gentium+Basic:400,400italic:latin' ] }
+	  };
+	  (function() {
+	    var wf = document.createElement('script');
+	    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+	      '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+	    wf.type = 'text/javascript';
+	    wf.async = 'true';
+	    var s = document.getElementsByTagName('script')[0];
+	    s.parentNode.insertBefore(wf, s);
+	  })();
+
+
+	
+var delayb4scroll=2000 //Specify initial delay before marquee starts to scroll on page (2000=2 seconds)
+var marqueespeed=2 //Specify marquee scroll speed (larger is faster 1-10)
+var pauseit=1 //Pause marquee onMousever (0=no. 1=yes)?
+
+////NO NEED TO EDIT BELOW THIS LINE////////////
+
+var copyspeed=marqueespeed
+var pausespeed=(pauseit==0)? copyspeed: 0
+var actualheight=''
+
+function scrollmarquee(){
+if (parseInt(cross_marquee.style.top)>(actualheight*(-1)+8)) //if scroller hasn't reached the end of its height
+cross_marquee.style.top=parseInt(cross_marquee.style.top)-copyspeed+"px" //move scroller upwards
+else //else, reset to original position
+cross_marquee.style.top=parseInt(marqueeheight)+8+"px"
+}
+
+function initializemarquee(){
+cross_marquee=document.getElementById("vmarquee")
+cross_marquee.style.top=0
+marqueeheight=document.getElementById("marqueecontainer").offsetHeight
+actualheight=cross_marquee.offsetHeight //height of marquee content (much of which is hidden from view)
+if (window.opera || navigator.userAgent.indexOf("Netscape/7")!=-1){ //if Opera or Netscape 7x, add scrollbars to scroll and exit
+cross_marquee.style.height=marqueeheight+"px"
+cross_marquee.style.overflow="scroll"
+return
+}
+setTimeout('lefttime=setInterval("scrollmarquee()",30)', delayb4scroll)
+}
+
+if (window.addEventListener)
+window.addEventListener("load", initializemarquee, false)
+else if (window.attachEvent)
+window.attachEvent("onload", initializemarquee)
+else if (document.getElementById)
+window.onload=initializemarquee
+
+
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Public Library Management System</title>
+<link href="css/cssmenu/menu_assets/styles.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+<!--
+#apDiv5 {	position:absolute;
+	left:700px;
+	top:21px;
+	width:323px;
+	height:92px;
+	z-index:1;
+}
+-->
+</style>
+<link href="css/link.css" rel="stylesheet" type="text/css" />
+<link href="css/linkcolour.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+<!--
+.style3 {color: #FFFFFF; font-weight: bold; }
+-->
+</style>
+<link href="css/bg change.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+<!--
+.style6 {color: #000000; font-weight: bold; }
+-->
+</style>
+<link href="java/jquery.cycle2.min.js" rel="stylesheet" type="text/css" />
+<link href="java/jquery.cycle2.swipe.min.js" rel="stylesheet" type="text/css" />
+<link href="java/jquery.js" rel="stylesheet" type="text/css" />
+<link href="css/styles.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+<!--
+.style9 {font-size: 18}
+.style11 {
+	font-size: 13px;
+	font-family: Geneva, Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	color: #FFFFFF;
+}
+.style12 {font-family: Geneva, Arial, Helvetica, sans-serif}
+.style18 {color: #000000}
+#apDiv3 {position:absolute;
+	left:270px;
+	top:0px;
+	width:500px;
+	height:70px;
+	z-index:2;
+}
+.style19 {color: #FFFFFF}
+-->
+</style>
+</head>
+
+<body>
+<table width="900" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td height="140" align="right" background="images/banner.jpg"><table width="900" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="516" valign="bottom">
+          <div id='cssmenu'>
+            <ul>
+              <li class='active'><a href='index.html'><span>Home</span></a></li>
+              <li class=''><a href='index.html'><span>Abouts Us</span></a></li>
+              <li class='has-sub'><a href='#'><span>Catalogue</span></a>
+                  <ul>
+                    <li class='has-sub'><a href='#'><span>Product 1</span></a> </li>
+                    <li class='has-sub'><a href='#'><span>Product 2</span></a> </li>
+                  </ul>
+              </li>
+              <li><a href='#'><span>E-Resources</span></a></li>
+              <li><a href='#'><span>Services</span></a></li>
+              <li class='last'><a href='#'><span>Contact Us</span></a></li>
+            </ul>
+          </div>
+        </div></td>
+        <td width="10" height="140">&nbsp;</td>
+        <td width="374" align="left" valign="middle"><table width="250" height="116" border="0" cellpadding="0" cellspacing="0">
+          <tr>
+            <td><table width="355" height="116" border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td height="68" align="right"><table width="250" height="67" border="0" cellpadding="0" cellspacing="2">
+                      <tr>
+                        <td width="87"><span class="style19">User Name </span></td>
+                        <td width="163"><form id="form1" name="form1" method="post" action="">
+                            <label>
+                            <input type="text" name="textfield" />
+                            </label>
+                        </form></td>
+                      </tr>
+                      <tr>
+                        <td><span class="style19">Password</span></td>
+                        <td><form id="form2" name="form2" method="post" action="">
+                            <label>
+                            <input type="text" name="textfield2" />
+                            </label>
+                        </form></td>
+                      </tr>
+                      <tr>
+                        <td>&nbsp;</td>
+                        <td><table width="150" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                              <td><form id="form3" name="form3" method="post" action="">
+                                  <label>
+                                  <input type="submit" name="Submit" value="Registar" />
+                                  </label>
+                              </form></td>
+                              <td><form id="form4" name="form4" method="post" action="">
+                                  <label>
+                                  <input type="submit" name="Submit2" value="Login" />
+                                  </label>
+                              </form></td>
+                            </tr>
+                        </table></td>
+                      </tr>
+                  </table></td>
+                </tr>
+                <tr>
+                  <td align="right" valign="top"><table width="351" height="48" border="0" cellpadding="0" cellspacing="2">
+                      <tr>
+                        <td height="24" align="right"><table width="317" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                              <td width="149"><input type="checkbox" name="checkbox" id="checkbox" />
+                                  <span class="style19">Keep Me Login</span> </td>
+                              <td width="168"><a href="#">Forgot Your Password</a> </td>
+                            </tr>
+                        </table></td>
+                      </tr>
+                      <tr>
+                        <td align="right"><table width="321" border="0" cellspacing="2" cellpadding="0">
+                            <tr>
+                              <td width="151"><form id="form7" name="form7" method="post" action="">
+                                  <label>
+                                  <input type="text" name="textfield3" />
+                                  </label>
+                              </form></td>
+                              <td width="96"><form id="form6" name="form6" method="post" action="">
+                                  <label>
+                                  <select name="select">
+                                    <option>Lending Collection</option>
+                                    <option>Reference Collection</option>
+                                    <option>Special Collection</option>
+                                    <option>Children's Collection</option>
+                                  </select>
+                                  </label>
+                              </form></td>
+                              <td width="74"><form id="form5" name="form5" method="post" action="">
+                                  <label>
+                                  <input type="submit" name="Submit3" value="Search" />
+                                  </label>
+                              </form></td>
+                            </tr>
+                        </table></td>
+                      </tr>
+                  </table></td>
+                </tr>
+            </table></td>
+          </tr>
+        </table></td>
+      </tr>
+    </table></td>
+  </tr>
+  
+  <tr>
+    <td><table width="900" height="339" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td width="208" height="339" align="center" valign="top"><table width="208" height="489" border="0" cellpadding="0" cellspacing="0">
+          <tr>
+            <td height="350"><table width="208" border="0" cellpadding="0" cellspacing="3" class="ssbg">
+              <tr>
+                <td height="30" align="center" bgcolor="#0099FF" class="sbg"><a href="#" class="style6 style12 style18">MEMBER</a></td>
+              </tr>
+              <tr>
+                <td height="30" align="center" bgcolor="#0099FF" class="sbg"><a href="#" class="style3 style12 style18">STAFF MEMBER</a></td>
+              </tr>
+              <tr>
+                <td height="30" align="center" bgcolor="#0099FF" class="sbg"><a href="#" class="style3 style12 style18">LIBRARIAN</a></td>
+              </tr>
+              <tr>
+                <td height="30" align="center" bgcolor="#0099FF" class="sbg"><a href="#" class="style3 style12 style18">BRANCHES</a></td>
+              </tr>
+              <tr>
+                <td height="30" align="center" bgcolor="#0099FF" class="sbg"><a href="#" class="style3 style12 style18">UPCOMING EVENTS </a></td>
+              </tr>
+              <tr>
+                <td height="25" align="center" bgcolor="#0099FF" class="sbg"><a href="#" class="style3 style12 style18">LIBRARY STAFF BLOG </a></td>
+              </tr>
+              <tr>
+                <td height="30" align="center" bgcolor="#0099FF" class="sbg"><a href="#" class="style3 style12 style18">LATEST EDITIONS </a></td>
+              </tr>
+              <tr>
+                <td height="30" align="center" bgcolor="#0099FF" class="sbg"><a href="#" class="style3 style12 style18">LOANS</a></td>
+              </tr>
+              <tr>
+                <td height="30" align="center" bgcolor="#0099FF" class="sbg"><a href="#" class="style3 style12 style18">READER SERVICES </a></td>
+              </tr>
+              <tr>
+                <td height="30" align="center" bgcolor="#0099FF" class="sbg"><a href="#" class="style3 style12 style18">ACHIEVEMENTS</a></td>
+              </tr>
+              <tr>
+                <td height="30" align="center" bgcolor="#0099FF" class="sbg"><a href="#" class="style3 style12 style18">OPENINGS HOURS </a></td>
+              </tr>
+              <tr>
+                <td height="30" align="center" bgcolor="#0099FF" class="sbg"><a href="#" class="style3 style18 style12">SUBJECT INDEX </a></td>
+              </tr>
+            </table></td>
+          </tr>
+          <tr>
+            <td bgcolor="#0000FF">&nbsp;</td>
+          </tr>
+        </table>
+          <div align="right"></div></td>
+        <td width="442" align="center" valign="top">&nbsp;</td>
+        <td width="250" align="right"><table width="250" height="450" border="0" cellpadding="0" cellspacing="0">
+          <tr>
+            <td height="80" align="center" bgcolor="#000000"><img src="images/newarrivals.jpg" width="255" height="75" /></td>
+          </tr>
+          <tr>
+            <td bgcolor="#0066FF"><div id="marqueecontainer" onMouseover="copyspeed=pausespeed" onMouseout="copyspeed=marqueespeed">
+<div id="vmarquee" style="position: absolute; width: 98%;">
+
+<h4>Magician's End</h4>
+<h5 class="text5">THE FALL OF ARTHUR recounts in verse the last campaign of King Arthur who, even as he stands at the threshold of Mirkwood is summoned back to Britain by news of the treachery of Mordred. Already weakened in spirit by Guinevere's infidelity with the now-exiled Lancelot</h5>
+
+<h4><img src="images/page covers/book cover 1.jpg" width="189" height="267" /> </h4>
+<h5 class="text5">If you were bewitched by The Night Circus...If you were mesmerised by A Discovery of Witches...If you were enthralled by Jonathan Strange & Mr Norrell...You will be enchanted by THE GOLEM & THE DJINNI Chava is a golem, a creature made of clay, brought to life by a disgraced rabbi who dabbles in dark Kabbalistic magic</h5>
+
+<h4><img src="images/page covers/book cover 2.jpg" /> </h4>
+<h5 class="text5">This extraordinary debut novel is from Singapore native Sandi Tan, who will appeal to fans of Neil Gaiman. 
+A sweeping story of ghosts in the modern world, and one woman's struggle to create her own destiny. </h5>
+
+<h5>
+
+
+<h4><img src="images/page covers/book cover 3.jpg" /> </h4>
+<h5 class="text5">If you were bewitched by The Night Circus...If you were mesmerised by A Discovery of Witches...If you were enthralled by Jonathan Strange & Mr Norrell...You will be enchanted by THE GOLEM & THE DJINNI Chava is a golem, a creature made of clay, brought to life by a disgraced rabbi who dabbles in dark Kabbalistic magic</h5>
+
+<h4><img src="images/page covers/book cover 4.jpg" /> </h4>
+<h5 class="text5">If you were bewitched by The Night Circus...If you were mesmerised by A Discovery of Witches...If you were enthralled by Jonathan Strange & Mr Norrell...You will be enchanted by THE GOLEM & THE DJINNI Chava is a golem, a creature made of clay, brought to life by a disgraced rabbi who dabbles in dark Kabbalistic magic</h5>
+
+<h4><img src="images/page covers/book cover 5.jpg" /> </h4>
+<h5 class="text5">This extraordinary debut novel is from Singapore native Sandi Tan, who will appeal to fans of Neil Gaiman. 
+A sweeping story of ghosts in the modern world, and one woman's struggle to create her own destiny. </h5>
+
+<h5>
+
+
+<h4><img src="images/page covers/book cover 6.jpg" /> </h4>
+<h5 class="text5">If you were bewitched by The Night Circus...If you were mesmerised by A Discovery of Witches...If you were enthralled by Jonathan Strange & Mr Norrell...You will be enchanted by THE GOLEM & THE DJINNI Chava is a golem, a creature made of clay, brought to life by a disgraced rabbi who dabbles in dark Kabbalistic magic</h5>
+</div>
+</div></td>
+          </tr>
+        </table></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td height="30" align="center" bgcolor="416be4"><table width="450" border="0" cellspacing="3" cellpadding="0">
+      <tr>
+        <td align="center"><table width="208" border="0" cellspacing="4" cellpadding="0">
+          <tr>
+            <td align="center" class="style9">&nbsp;</td>
+            <td align="center" class="style9"><strong><a href="index.html" class="style6">HOME</a></strong></td>
+            <td align="center" class="style9"><strong> <a href="contact.html" class="style6">CONTACT</a> </strong></td>
+            <td align="center" class="style9">&nbsp;</td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td align="center"><span class="style11">Copyright 2013 WWW.Public Library Management System.COM</span></td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+</body>
+</html>

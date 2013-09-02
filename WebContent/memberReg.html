@@ -1,0 +1,289 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Membership Request</title>
+<style type="text/css">
+<!--
+.mid {
+	font-weight: bold;
+	text-align: center;
+	font-size: 24px;
+}
+.top {
+	text-align: center;
+}
+.top .title {
+	font-size: 26px;
+	color: #00F;
+}
+.fill {
+	color: #39F;
+}
+-->
+</style>
+
+<script type="text/javascript">
+
+function validateForm(){
+	var firstname=document.frmmem.txtfname.value.length;
+	if(firstname==0)
+		{
+		alert("first name is required");
+		return false;
+        }
+	
+	var lastname=document.frmmem.txtlname.value.length;
+	if(lastname==0)
+	{
+	alert("last name is required");
+	return false;
+    }
+	
+	var ad1=document.frmmem.txtaddress1.value.length;
+	if(ad1==0)
+	{
+	alert("Address 1 is required");
+	return false;
+    }
+	
+	var ad2=document.frmmem.txtaddress2.value.length;
+	if(ad2==0)
+	{
+	alert("Address 2 is required");
+	return false;
+    }
+	
+	var city=document.frmmem.txtcity.value.length;
+	if(city==0)
+	{
+	alert("city is required");
+	return false;
+    }
+	
+	//var nic=document.frmmem.txtnic.value.length;
+	var nic=document.frmmem.txtnic.value;
+	if(nic.length==0)
+	{
+	    alert("NIC is required");
+	    return false;
+	}   
+ 	else if(nic.length<10 || nic.charAt(9)!='v' || isInteger(nic.substring(0,9) ))
+ 	{	alert("Not a valid NIC");
+  	     return false;
+    }
+	
+	var dob=document.frmmem.txtdob.value.length;
+	if(dob==0)
+	{
+	alert("Date of Birth is required");
+	return false;
+    }
+	
+	var email=document.frmmem.txtmail.value.length;
+	if(email==0)
+	{
+	alert("Email is required");
+	return false;
+    }
+	
+	else
+	{
+		var email=document.frmmem.txtmail.value;
+		var atpos=email.indexOf("@");
+		var dotpos=email.lastIndexOf(".");
+		if (atpos<1 || dotpos<atpos+2 || dotpos+2>=email.length)
+		  {
+		  alert("Not a valid e-mail address");
+		  return false;
+		  }
+		
+	}
+	var mobile=document.frmmem.txtmobile.value.length;
+	if(mobile==0)
+	{
+	alert("Mobile number is required");
+	return false;
+	}
+	
+	else return true;
+		var request;
+		 if(request.readyState == 4 && request.status==200)
+	 	 {
+			 var response = request.responseText;
+		 	  alert(response); 
+			 
+			}
+	}
+	
+function isInteger(s) 
+{ var i; 
+for (i = 0; i < s.length; i++) 
+{ 
+// Check that current character is number. 
+var c = s.charAt(i); 
+if (((c < "0") || (c > "9")))
+	return true; 
+} 
+// All characters are numbers. 
+return false; 
+}
+	</script>
+</head>
+
+<body>
+<form action="memServlet" method="get" name="frmmem" onsubmit="javascript:return validateForm()">
+<p class="top"><span class="title">Membership Request</span>  </p>
+<table border="0" cellpadding="10">
+      <tr>
+          <td colspan="4">
+          <p class="mid">Member Information</p></td>
+  </tr>
+        <tr>
+          <td colspan="2">First Name</td>
+          <td colspan="2">
+            <label>
+              <input name="txtfname" type="text" id="txtfname" size="40" />
+            </label>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">Last Name</td>
+          <td colspan="2">
+            <label>
+              <input name="textfield6" type="text" id="txtlname" size="40" />
+            </label>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">Address 1</td>
+          <td colspan="2">
+            <label>
+              <input name="txtaddress1" type="text" id="txtaddress1" size="40" />
+            </label>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">Address 2</td>
+          <td colspan="2">
+            <label>
+              <input name="txtaddress2" type="text" id="txtaddress2" size="40" />
+            </label>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">City</td>
+          <td colspan="2">
+            <label>
+              <input type="text" name="txtcity" id="txtcity" />
+            </label>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">N.I.C. No.</td>
+          <td colspan="2">
+            <label>
+              <input type="text" name="txtnic" id="txtnic" />
+            </label>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">Date of Birth</td>
+          <td colspan="2">
+            <label>
+              <input type="text" name="txtdob" id="txtdob" />
+            </label>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">Email Address</td>
+          <td colspan="2">
+            <label>
+              <input name="txtmail" type="text" id="txtmail" size="40" />
+            </label>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">Mobile No.</td>
+          <td colspan="2">
+            <label>
+              <input type="text" name="txtmobile" id="txtmobile" />
+            </label>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">Fixed Line</td>
+          <td colspan="2">
+            <label>
+              <input type="text" name="txtfixed" id="txtfixed" />
+            </label>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="4">
+          <p class="mid">Volunteer Information</p></td>
+        </tr>
+        <tr>
+          <td colspan="2">Volunteer Name</td>
+          <td colspan="2">
+            <label>
+              <textarea name="textfield18" id="txtvname"></textarea>
+            </label>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">Address</td>
+          <td colspan="2">
+            <label>
+              <textarea name="textfield28" id="txtvaddress"></textarea>
+            </label>
+         </td>
+        </tr>
+        <tr>
+          <td colspan="2">NIC No.</td>
+          <td colspan="2">
+            <label>
+              <input type="text" name="textfield29" id="txtvnic" />
+            </label>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">Contact No.</td>
+          <td colspan="2">
+            <label>
+              <input type="text" name="textfield30" id="txtvcontact" />
+            </label>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">Assessment Tax No</td>
+          <td colspan="2">
+            <label>
+              <input type="text" name="textfield31" id="txtassno" />
+            </label>
+          </td>
+        </tr>
+        <tr>
+          <td width="20"><p>&nbsp;</p>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p></td>
+          <td width="80">
+            <label>
+              <input type="submit" name="button1" id="adddata" value="Add Data"/>
+            </label>
+          </td>
+          <td width="47">
+            <label>
+              <input type="reset" name="button2" id="clear" value="Clear" />
+            </label>
+          </td>
+          <td width="177">
+            <label>
+              <input type="button" name="button3" id="cancel" value="Cancel" />
+            </label>
+          </td>
+        </tr>
+</table>
+</form>
+</body>
+</html>

@@ -1,0 +1,508 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1250">
+<script src="js/jquery.js"></script>
+	<script src="js/jquery.cycle2.min.js"></script>
+	<script src="js/jquery.cycle2.swipe.min.js"></script>
+<script type="text/javascript">
+
+	  WebFontConfig = {
+	    google: { families: [ 'Cabin:400,600,700,400italic,600italic,700italic:latin', 'Gentium+Basic:400,400italic:latin' ] }
+	  };
+	  (function() {
+	    var wf = document.createElement('script');
+	    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+	      '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+	    wf.type = 'text/javascript';
+	    wf.async = 'true';
+	    var s = document.getElementsByTagName('script')[0];
+	    s.parentNode.insertBefore(wf, s);
+	  })();
+
+
+	
+var delayb4scroll=2000 //Specify initial delay before marquee starts to scroll on page (2000=2 seconds)
+var marqueespeed=2 //Specify marquee scroll speed (larger is faster 1-10)
+var pauseit=1 //Pause marquee onMousever (0=no. 1=yes)?
+
+////NO NEED TO EDIT BELOW THIS LINE////////////
+
+var copyspeed=marqueespeed
+var pausespeed=(pauseit==0)? copyspeed: 0
+var actualheight=''
+
+function scrollmarquee(){
+if (parseInt(cross_marquee.style.top)>(actualheight*(-1)+8)) //if scroller hasn't reached the end of its height
+cross_marquee.style.top=parseInt(cross_marquee.style.top)-copyspeed+"px" //move scroller upwards
+else //else, reset to original position
+cross_marquee.style.top=parseInt(marqueeheight)+8+"px"
+}
+
+function initializemarquee(){
+cross_marquee=document.getElementById("vmarquee")
+cross_marquee.style.top=0
+marqueeheight=document.getElementById("marqueecontainer").offsetHeight
+actualheight=cross_marquee.offsetHeight //height of marquee content (much of which is hidden from view)
+if (window.opera || navigator.userAgent.indexOf("Netscape/7")!=-1){ //if Opera or Netscape 7x, add scrollbars to scroll and exit
+cross_marquee.style.height=marqueeheight+"px"
+cross_marquee.style.overflow="scroll"
+return
+}
+setTimeout('lefttime=setInterval("scrollmarquee()",30)', delayb4scroll)
+}
+
+if (window.addEventListener)
+window.addEventListener("load", initializemarquee, false)
+else if (window.attachEvent)
+window.attachEvent("onload", initializemarquee)
+else if (document.getElementById)
+window.onload=initializemarquee
+
+
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Public Library Management System</title>
+<link href="css/cssmenu/menu_assets/styles.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+<!--
+#apDiv5 {	position:absolute;
+	left:700px;
+	top:21px;
+	width:323px;
+	height:92px;
+	z-index:1;
+}
+-->
+</style>
+<link href="css/link.css" rel="stylesheet" type="text/css" />
+<link href="css/linkcolour.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+<!--
+.style3 {color: #FFFFFF; font-weight: bold; }
+-->
+</style>
+<link href="css/bg change.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+<!--
+.style6 {color: #000000; font-weight: bold; }
+-->
+</style>
+<link href="java/jquery.cycle2.min.js" rel="stylesheet" type="text/css" />
+<link href="java/jquery.cycle2.swipe.min.js" rel="stylesheet" type="text/css" />
+<link href="java/jquery.js" rel="stylesheet" type="text/css" />
+<link href="css/styles.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+<!--
+.style9 {font-size: 18}
+.style11 {
+	font-size: 13px;
+	font-family: Geneva, Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	color: #FFFFFF;
+}
+.style12 {font-family: Geneva, Arial, Helvetica, sans-serif}
+.style18 {color: #000000}
+#apDiv3 {position:absolute;
+	left:270px;
+	top:0px;
+	width:500px;
+	height:70px;
+	z-index:2;
+}
+.style19 {color: #FFFFFF}
+body {
+	background-color: #999999;
+}
+.style20 {font-size: 14px}
+a:link {
+	color: #000;
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: none;
+}
+a:active {
+	text-decoration: none;
+}
+-->
+</style>
+</head>
+
+<body>
+<table width="900" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td height="140" align="right" background="images/banner2.jpg"><table width="900" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="516" valign="bottom">
+          <div id='cssmenu'>
+            <ul>
+              <li class='active'><a href='index.html'><span>Home</span></a></li>
+              <li class=''><a href='index.html'><span>Abouts Us</span></a></li>
+              <li class='has-sub'><a href='#'><span>Catalogue</span></a>
+                  <ul>
+                    <li class='has-sub'><a href='#'><span>Lending Collection</span></a> </li>
+                    <li class='has-sub'><a href='#'><span>Reference Collection</span></a> </li>
+                    <li class='has-sub'><a href='#'><span>Special Collection</span></a> </li>
+                    <li class='has-sub'><a href='#'><span>Children's Collection</span></a> </li>
+                  </ul>
+              </li>
+              <li><a href='#'><span>E-Resources</span></a></li>
+              <li><a href='#'><span>Services</span></a></li>
+              <li class='last'><a href='#'><span>Contact Us</span></a></li>
+            </ul>
+          </div>
+        </div></td>
+        <td width="10" height="140">&nbsp;</td>
+        <td width="374" align="left" valign="middle"><table width="250" height="116" border="0" cellpadding="0" cellspacing="0">
+          <tr>
+            <td><table width="355" height="116" border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td height="68" align="right"><table width="250" height="67" border="0" cellpadding="0" cellspacing="2">
+                      <tr>
+                        <td width="87"><span class="style19">User Name </span></td>
+                        <td width="163"><form id="form1" name="form1" method="post" action="">
+                            <label>
+                            <input type="text" name="textfield" />
+                            </label>
+                        </form></td>
+                      </tr>
+                      <tr>
+                        <td><span class="style19">Password</span></td>
+                        <td><form id="form2" name="form2" method="post" action="">
+                            <label>
+                            <input type="text" name="textfield2" />
+                            </label>
+                        </form></td>
+                      </tr>
+                      <tr>
+                        <td>&nbsp;</td>
+                        <td><table width="150" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                              <td><form id="form3" name="form3" method="post" action="">
+                                  <label>
+                                  <input type="submit" name="Submit" value="Registar" />
+                                  </label>
+                              </form></td>
+                              <td><form id="form4" name="form4" method="post" action="">
+                                  <label>
+                                  <input type="submit" name="Submit2" value="Login" />
+                                  </label>
+                              </form></td>
+                            </tr>
+                        </table></td>
+                      </tr>
+                  </table></td>
+                </tr>
+                <tr>
+                  <td align="right" valign="top"><table width="351" height="48" border="0" cellpadding="0" cellspacing="2">
+                      <tr>
+                        <td height="24" align="right"><table width="317" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                              <td width="149"><input type="checkbox" name="checkbox" id="checkbox" />
+                                  <span class="style19">Keep Me Login</span> </td>
+                              <td width="168"><a href="#">Forgot Your Password</a> </td>
+                            </tr>
+                        </table></td>
+                      </tr>
+                      <tr>
+                        <td align="right"><table width="321" border="0" cellspacing="2" cellpadding="0">
+                            <tr>
+                              <td width="151"><form id="form7" name="form7" method="post" action="">
+                                  <label>
+                                  <input type="text" name="textfield3" />
+                                  </label>
+                              </form></td>
+                              <td width="96"><form id="form6" name="form6" method="post" action="">
+                                  <label>
+                                  <select name="select">
+                                    <option>Lending Collection</option>
+                                    <option>Reference Collection</option>
+                                    <option>Special Collection</option>
+                                    <option>Children's Collection</option>
+                                  </select>
+                                  </label>
+                              </form></td>
+                              <td width="74"><form id="form5" name="form5" method="post" action="">
+                                  <label>
+                                  <input type="submit" name="Submit3" value="Search" />
+                                  </label>
+                              </form></td>
+                            </tr>
+                        </table></td>
+                      </tr>
+                  </table></td>
+                </tr>
+            </table></td>
+          </tr>
+        </table></td>
+      </tr>
+    </table></td>
+  </tr>
+  
+  <tr>
+    <td><table width="901" height="339" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td width="208" height="339" align="center" valign="top"><table width="208" height="595" border="0" cellpadding="0" cellspacing="0">
+          <tr>
+            <td height="279" align="center" valign="top" bgcolor="#FFFFFF"><table width="208" border="0" cellpadding="0" cellspacing="3" class="has-sub">
+              <tr>
+                <td height="25" align="center" bgcolor="#1562FF" >MY ACCOUNT</td>
+              </tr>
+              <tr>
+                <td height="25" align="center" bgcolor="#6C9CFF" class="sbg"><a href="OPAC.html" class="style6" target="_blank">MEMBER</a></td>
+              </tr>
+              <tr>
+                <td height="25" align="center" bgcolor="#6C9CFF" class="sbg"><a href="staffMemberLogin.html" class="style6" target="_blank">STAFF MEMBER</a></td>
+              </tr>
+              <tr>
+                <td height="25" align="center" bgcolor="#6C9CFF" class="sbg"><a href="staffMemberLogin.html" target="_blank" class="style6">LIBRARIAN</a></td>
+              </tr>
+              <tr>
+                <td height="25" align="center" bgcolor="#1562FF" class="sbg"><a href="#" class="style3 style12 style18">BRANCHES</a></td>
+              </tr>
+              <tr>
+                <td height="25" align="center" bgcolor="#1562FF" class="sbg"><a href="#" class="style3 style12 style18">UPCOMING EVENTS </a></td>
+              </tr>
+              <tr>
+                <td height="25" align="center" bgcolor="#1562FF" class="sbg"><a href="#" class="style3 style12 style18">LIBRARY STAFF BLOG </a></td>
+              </tr>
+              <tr>
+                <td height="25" align="center" bgcolor="#1562FF" class="sbg"><a href="#" class="style3 style12 style18">LATEST EDITIONS </a></td>
+              </tr>
+              <tr>
+                <td height="25" align="center" bgcolor="#1562FF" class="sbg"><a href="#" class="style3 style12 style18">LOANS</a></td>
+              </tr>
+              <tr>
+                <td height="25" align="center" bgcolor="#1562FF" class="sbg"><a href="#" class="style3 style12 style18">READER SERVICES </a></td>
+              </tr>
+              <tr>
+                <td height="25" align="center" bgcolor="#1562FF" class="sbg"><a href="#" class="style3 style12 style18">ACHIEVEMENTS</a></td>
+              </tr>
+              <tr>
+                <td height="25" align="center" bgcolor="#1562FF" class="sbg"><a href="#" class="style3 style12 style18">OPENINGS HOURS </a></td>
+              </tr>
+              <tr>
+                <td height="33" align="center" bgcolor="#1562FF" class="sbg"><a href="#" class="style3 style18 style12">SUBJECT INDEX </a></td>
+              </tr>
+            </table></td>
+          </tr>
+          <tr>
+            <td align="center" valign="middle" bgcolor="#FFFFFF">
+              <script LANGUAGE="JavaScript">
+
+<!-- Begin
+monthnames = new Array(
+"January",
+"Februrary",
+"March",
+"April",
+"May",
+"June",
+"July",
+"August",
+"September",
+"October",
+"November",
+"Decemeber");
+var linkcount=0;
+function addlink(month, day, href) {
+var entry = new Array(3);
+entry[0] = month;
+entry[1] = day;
+entry[2] = href;
+this[linkcount++] = entry;
+}
+Array.prototype.addlink = addlink;
+linkdays = new Array();
+monthdays = new Array(12);
+monthdays[0]=31;
+monthdays[1]=28;
+monthdays[2]=31;
+monthdays[3]=30;
+monthdays[4]=31;
+monthdays[5]=30;
+monthdays[6]=31;
+monthdays[7]=31;
+monthdays[8]=30;
+monthdays[9]=31;
+monthdays[10]=30;
+monthdays[11]=31;
+todayDate=new Date();
+thisday=todayDate.getDay();
+thismonth=todayDate.getMonth();
+thisdate=todayDate.getDate();
+thisyear=todayDate.getYear();
+thisyear = thisyear % 100;
+thisyear = ((thisyear < 50) ? (2000 + thisyear) : (1900 + thisyear));
+if (((thisyear % 4 == 0) 
+&& !(thisyear % 100 == 0))
+||(thisyear % 400 == 0)) monthdays[1]++;
+startspaces=thisdate;
+while (startspaces > 7) startspaces-=7;
+startspaces = thisday - startspaces + 1;
+if (startspaces < 0) startspaces+=7;
+document.write("<table border=2 bgcolor=white ");
+document.write("bordercolor=black><font color=black>");
+document.write("<tr><td colspan=7><center><strong>" 
++ monthnames[thismonth] + " " + thisyear 
++ "</strong></center></font></td></tr>");
+document.write("<tr>");
+document.write("<td align=center>Su</td>");
+document.write("<td align=center>M</td>");
+document.write("<td align=center>Tu</td>");
+document.write("<td align=center>W</td>");
+document.write("<td align=center>Th</td>");
+document.write("<td align=center>F</td>");
+document.write("<td align=center>Sa</td>"); 
+document.write("</tr>");
+document.write("<tr>");
+for (s=0;s<startspaces;s++) {
+document.write("<td> </td>");
+}
+count=1;
+while (count <= monthdays[thismonth]) {
+for (b = startspaces;b<7;b++) {
+linktrue=false;
+document.write("<td>");
+for (c=0;c<linkdays.length;c++) {
+if (linkdays[c] != null) {
+if ((linkdays[c][0]==thismonth + 1) && (linkdays[c][1]==count)) {
+document.write("<a href=\"" + linkdays[c][2] + "\">");
+linktrue=true;
+      }
+   }
+}
+if (count==thisdate) {
+document.write("<font color='red'><strong>");
+}
+if (count <= monthdays[thismonth]) {
+document.write(count);
+}
+else {
+document.write(" ");
+}
+if (count==thisdate) {
+document.write("</strong></font>");
+}
+if (linktrue)
+document.write("</a>");
+document.write("</td>");
+count++;
+}
+document.write("</tr>");
+document.write("<tr>");
+startspaces=0;
+}
+document.write("</table></p>");
+// End -->
+</script>
+            </td>
+          </tr>
+        </table>
+          <div align="right"></div></td>
+        <td width="540" align="center" valign="top" bgcolor="#FFFFFF"><table width="540" height="250" border="0" cellpadding="0" cellspacing="0">
+          <tr>
+            <td width="420" height="95">&nbsp;</td>
+          </tr>
+          <tr>
+            <td width="420" height="250" align="center">
+			
+			
+			
+			
+			<SCRIPT>
+(function(j,i,e,h,d,g,w){/*! Jssor Javascript Library */
+$Jssor$=j.$Jssor$=j.$Jssor$||{};new(function(){});var p=function(){var b=this,a={};b.ec=b.addEventListener=function(b,c){if(typeof c!="function")return;if(!a[b])a[b]=[];a[b].push(c)};b.removeEventListener=function(e,d){var b=a[e];if(typeof d!="function")return;else if(!b)return;for(var c=0;c<b.length;c++)if(d==b[c]){b.splice(c,1);return}};b.Ab=function(e){var c=a[e],d=[];if(!c)return;for(var b=1;b<arguments.length;b++)d.push(arguments[b]);for(var b=0;b<c.length;b++)try{c[b].apply(j,d)}catch(f){}}},k;(function(){k=function(a,b){this.x=typeof a=="number"?a:0;this.y=typeof b=="number"?b:0};})();var l={de:function(a){return(~a&3)+(a&12)},ce:function(a){return(~a&12)+(a&3)},Vd:function(a){return(a&3)==1},Ud:function(a){return(a&3)==2},Td:function(a){return(a&12)==4},Yd:function(a){return(a&12)==8},Yc:function(a){return(a&3)>0},ad:function(a){return(a&12)>0}},u={Cd:37,Ad:39},q,o={Ie:0,He:1,Ke:2,Ne:3,Le:4,cf:5},v=1,z=2,A=4,C=5,n,a=new function(){var c=this,p=o.Ie,l=0,t=0,V=navigator.appName,s=navigator.userAgent;function J(){if(!p&&V=="Microsoft Internet Explorer"&&!!j.attachEvent&&!!j.ActiveXObject){var a=s.indexOf("MSIE");p=o.He;t=parseFloat(s.substring(a+5,s.indexOf(";",a)));l=i.documentMode||t}}function N(){var a=/(opera)(?:.*version|)[ \/]([\w.]+)/i.exec(s);if(a){p=o.cf;l=parseFloat(a[2])}}function y(){if(!p&&V=="Netscape"&&!!j.addEventListener){var b=s.indexOf("Firefox"),a=s.indexOf("Safari"),c=s.indexOf("Chrome");if(b>=0){p=o.Ke;l=parseFloat(s.substring(b+8))}else if(a>=0){var d=s.substring(0,a).lastIndexOf("/");p=c>=0?o.Le:o.Ne;l=parseFloat(s.substring(d+1,a))}}}function m(){J();return p==v}function Q(){y();return p==z}function R(){y();return p==A}function db(){N();return p==C}function Z(){return m()&&l<9||R()&&l<2}var H;function Y(a){!H&&r(["transform","WebkitTransform","msTransform","MozTransform","OTransform"],function(b){if(!c.df(a.style[b])){H=b;return d}});return H}function U(a){return Object.prototype.toString.call(a)}var E;function r(a,c){if(U(a)=="[object Array]"){for(var b=0;b<a.length;b++)if(c(a[b],b,a))break}else for(var d in a)if(c(a[d],d,a))break}function eb(){if(!E){E={};r(["Boolean","Number","String","Function","Array","Date","RegExp","Object"],function(a){E["[object "+a+"]"]=a.toLowerCase()})}return E}function u(a){return a==h?String(a):eb()[U(a)]||"object"}function L(b,a){setTimeout(b,a||0)}function K(d,c,b){var a=d||"";r(c,function(c){var b=c.exec(a);if(b){var d=a.substr(0,b.index),e=a.substr(b.lastIndex+1,a.length-(b.lastIndex+1));a=d+e}});a=b+(a.indexOf(" ")!=0?" ":"")+a;return a}c.Xe=db;c.e=L;c.Cb=function(a){if(c.af(a))a=i.getElementById(a);return a};c.nc=function(a){return a?a:j.event};c.cd=function(a){a=c.nc(a);var b=new k;if(a.type=="DOMMouseScroll"&&Q()&&l<3){b.x=a.screenX;b.y=a.screenY}else if(typeof a.pageX=="number"){b.x=a.pageX;b.y=a.pageY}else if(typeof a.clientX=="number"){b.x=a.clientX+i.body.scrollLeft+i.documentElement.scrollLeft;b.y=a.clientY+i.body.scrollTop+i.documentElement.scrollTop}return b};c.bc=function(b,a,i){if(i&&Z())a=e.round(a);if(m()&&t<9){var d="filter",g=b.style[d]||"",j=new RegExp(/[\s]*alpha\([^\)]*\)/g),f=e.round(100*a),c="";if(f<100)c="alpha(opacity="+f+") ";var h=K(g,[j],c);b.style[d]=h}else b.style.opacity=a==1?"":a};c.he=function(b,a,d){var f=b.style.filter,h=new RegExp(/[\s]*progid:DXImageTransform\.Microsoft\.Matrix\([^\)]*\)/g),g="progid:DXImageTransform.Microsoft.Matrix(M11="+a[0][0]+", M12="+a[0][1]+", M21="+a[1][0]+", M22="+a[1][1]+", SizingMethod='auto expand')",e=K(f,[h],g);b.style.filter=e;c.Uc(b,d.y);c.Vc(b,d.x)};c.je=function(b,a){var h=a.s||0,f=a.Xb==0?0:a.Xb||1;if(m()&&t<9){var g=c.De(h/180*e.PI,f,f);c.he(b,g,c.Be(g,a.Ib,a.Eb))}else{var k="rotate("+h%360+"deg) scale("+f+")",d=Y(b),j=b.style[d],l=new RegExp(/[\s]*rotate\(.*?\)/g),n=new RegExp(/[\s]*scale\(.*?\)/g),i=K(j,[l,n],k);if(d)b.style[d]=i}};c.z=function(a,d,e,b){a=c.Cb(a);if(a.addEventListener){d=="mousewheel"&&a.addEventListener("DOMMouseScroll",e,b);a.addEventListener(d,e,b)}else if(a.attachEvent){a.attachEvent("on"+d,e);b&&a.setCapture&&a.setCapture()}};c.we=function(a,d,e,b){a=c.Cb(a);if(a.removeEventListener){d=="mousewheel"&&a.removeEventListener("DOMMouseScroll",e,b);a.removeEventListener(d,e,b)}else if(a.detachEvent){a.detachEvent("on"+d,e);b&&a.releaseCapture&&a.releaseCapture()}};c.ve=function(b,a){c.z(m()&&l<9?i:j,"mouseup",b,a)};c.Tb=function(a){a=c.nc(a);a.preventDefault&&a.preventDefault();a.cancel=d;a.returnValue=g};c.fb=function(d,c){for(var b=[],a=2;a<arguments.length;a++)b.push(arguments[a]);return function(){for(var e=b.concat([]),a=0;a<arguments.length;a++)e.push(arguments[a]);return c.apply(d,e)}};c.ye=function(a,c){var b=i.createTextNode(c);a.innerHTML="";a.appendChild(b)};c.ue=function(a,b){a.innerHTML=b};c.od=function(a){a.innerHTML=""};c.Jc=function(c){for(var b=[],a=c.firstChild;a;a=a.nextSibling)a.nodeType==1&&b.push(a);return b};function G(a,c,b,e){if(!b)b="u";for(a=a?a.firstChild:h;a;a=a.nextSibling)if(a.nodeType==1){if(a.getAttribute(b)==c)return a;if(e){var d=G(a,c,b,e);if(d)return d}}}c.eb=G;function W(a,d,b,f){if(!b)b="u";var c=[];for(a=a?a.firstChild:h;a;a=a.nextSibling)if(a.nodeType==1){a.getAttribute(b)==d&&c.push(a);if(f){var e=G(a,d,b,f);if(e.length)c=c.concat(e)}}return c}c.Ae=W;function M(a,c,d){for(a=a?a.firstChild:h;a;a=a.nextSibling)if(a.nodeType==1){if(a.tagName==c)return a;if(d){var b=M(a,c,d);if(b)return b}}}c.Ee=M;function O(a,e,f){var b=[];for(a=a?a.firstChild:h;a;a=a.nextSibling)if(a.nodeType==1){a.tagName==e&&b.push(a);if(f){var c=O(a,e,d);if(c.length)b=b.concat(c)}}return b}c.Fe=O;c.Ge=function(b,a){return b.getElementsByTagName(a)};c.G=function(c){for(var b=1;b<arguments.length;b++){var a=arguments[b];if(a)for(var d in a)c[d]=a[d]}return c};c.df=function(a){return u(a)=="undefined"};c.Lc=function(a){return u(a)=="function"};c.te=Array.isArray||function(a){return u(a)=="array"};c.af=function(a){return u(a)=="string"};c.Vb=function(a){return!isNaN(parseFloat(a))&&isFinite(a)};c.v=r;c.nd=function(a){return c.Oc("DIV",a)};c.ge=function(a){return c.Oc("SPAN",a)};c.Oc=function(b,a){a=a||i;return a.createElement(b)};c.ob=function(){};c.ie=function(b,c,a){b.setAttribute(c,a)};c.Hc=function(a){return a.className};c.Gc=function(b,a){b.className=a?a:""};c.re=function(b,a){b.style.cursor=a};c.Fb=function(b,a){b.style.display=a};c.yb=function(b,a){b.style.overflow=a};c.yc=function(a){return a.parentNode};c.Jb=function(a){c.Fb(a,"none")};c.O=function(a,b){c.Fb(a,b==g?"none":"")};c.kb=function(b,a){b.style.position=a};c.ef=function(a){return parseInt(a.style.top,10)};c.Ub=function(a,b){a.style.top=b+"px"};c.Me=function(a){return parseInt(a.style.left,10)};c.nb=function(a,b){a.style.left=b+"px"};c.dc=function(a){return parseInt(a.style.width,10)};c.cc=function(b,a){b.style.width=e.max(a,0)+"px"};c.fc=function(a){return parseInt(a.style.height,10)};c.ac=function(b,a){b.style.height=e.max(a,0)+"px"};c.Je=function(a){return a.style.cssText};c.Se=function(b,a){b.style.cssText=a};c.Vc=function(b,a){b.style.marginLeft=a+"px"};c.Uc=function(b,a){b.style.marginTop=a+"px"};c.Ec=function(b,a){b.style.backgroundColor=a};c.xd=function(b,a){b.style.clip="rect("+e.round(a.b)+"px "+e.round(a.E)+"px "+e.round(a.D)+"px "+e.round(a.h)+"px)"};c.N=function(){return+new Date};c.H=function(b,a){b.appendChild(a)};c.Nc=function(c,b,a){c.insertBefore(b,a)};c.hc=function(b,a){b.removeChild(a)};c.ee=function(b,a){r(a,function(a){c.hc(b,a)})};c.Zd=function(a){c.ee(a,c.Jc(a))};c.xc=function(b,a){var c=i.body;while(a&&b!=a&&c!=a)try{a=a.parentNode}catch(d){return g}return b==a};c.P=function(b,a){return b.cloneNode(a)};function I(a,b,c){b.onload=h;a&&a(b,c)}c.Rb=function(f,e){var b=new Image;b.onload=a.fb(h,I,e,b);b.onabort=a.fb(h,I,e,b,d);b.src=f;c.Xe()&&l>10&&l<11.6&&I(e,b)};c.Kd=function(c,k,j,i){if(i)c=a.P(c,d);for(var h=a.Ge(c,k),f=h.length-1;f>-1;f--){var b=h[f],e=a.P(j,d);a.Gc(e,a.Hc(b));a.Se(e,a.Je(b));var g=a.yc(b);a.Nc(g,e,b);a.hc(g,b)}return c};var x;function gb(b,n){var i=this,j,f,k,h;function e(){var c=j;if(f)c+="dn";else if(h)c+="hv";else if(k)c+="av";a.Gc(b,c)}function p(){h=d;e()}function q(){h=g;e()}function o(){x.push(i);f=d;e()}i.Ld=function(){f=g;e()};i.Fd=function(a){k=a;e()};b=c.Cb(b);if(!x){c.ve(function(){var a=x;x=[];r(a,function(a){a.Ld()})});x=[]}j=c.Hc(b);a.z(b,"mousedown",o);if(n&&m()&&l<7){a.z(b,"mouseover",p);a.z(b,"mouseout",q)}}c.Hd=function(b,a){return new gb(b,a)};var f;function D(){if(!f){f={m:c.bc,b:c.Ub,h:c.nb,U:c.cc,R:c.ac,Sb:c.Fb,j:c.xd,Bc:c.Vc,Ac:c.Uc,Pb:c.je,hb:c.kb};f.m=f.m;f.b=f.b;f.h=f.h;f.U=f.U;f.R=f.R;f.Sb=f.Sb;f.j=f.j}return f}function P(){D();f.Bc=f.Bc;f.Ac=f.Ac;f.Pb=f.Pb;return f}c.X=function(c,b){var a=D();r(b,function(d,b){a[b]&&a[b](c,d)})};c.Od=function(b,a){P();c.X(b,a)};q=new function(){var a=this;function b(d,g){for(var j=d[0].length,i=d.length,h=g[0].length,f=[],c=0;c<i;c++)for(var k=f[c]=[],b=0;b<h;b++){for(var e=0,a=0;a<j;a++)e+=d[c][a]*g[a][b];k[b]=e}return f}a.Qb=function(d,c){var a=b(d,[[c.x],[c.y]]);return new k(a[0][0],a[1][0])}};c.De=function(c,a,b){var d=e.cos(c),f=e.sin(c);return[[d*a,-f*b],[f*a,d*b]]};c.Be=function(c,b,a){var d=q.Qb(c,new k(-b/2,-a/2)),f=q.Qb(c,new k(b/2,-a/2)),g=q.Qb(c,new k(b/2,a/2)),h=q.Qb(c,new k(-b/2,a/2));return new k(e.min(e.min(e.min(d.x,f.x),g.x),h.x)+b/2,e.min(e.min(e.min(d.y,f.y),g.y),h.y)+a/2)};n=function(t,v,i,R,E,w){var f=this,p,m,n,x,y=0,C,P,O,J,k=0,z=0,G,l=t,u=t+v,j,h,o,A=[],B;function H(a){return a>=l&&a<=u}function K(a){j+=a;h+=a;l+=a;u+=a;r(A,function(b){b,b.Cc(a)})}function Q(a,b){var c=a-j+t*b;K(c);return h}function s(t){var p=t;if(o&&(p>=h||p<=j))p=((p-j)%o+o)%o+j;if(k!=p||!G||x){var g=e.min(p,h);g=e.max(g,j);if(H(g)||H(k)){if(w){var L=(g-l)/v,b={};for(var m in w){var S=P[m]||1,J=O[m]||[0,1],n=L*S,F=e.floor(n);if(n!=F)n-=F;n=(n-J[0])/J[1];var Q=C[m]||C.mb,I=Q(n),q,K=E[m],D=w[m];if(a.Vb(D))q=K+(D-K)*I;else{q=c.G({S:{}},E[m]);r(D.S,function(c,b){var a=c*I;q.S[b]=a;q[b]+=a})}b[m]=q}if(E.q)b.Pb={s:b.s||0,Xb:b.q,Ib:i.Ib,Eb:i.Eb};if(w.j&&i.T){var s=b.j.S,y=(s.b||0)+(s.D||0),u=(s.h||0)+(s.E||0);b.h=(b.h||0)+u;b.b=(b.b||0)+y;b.j.h-=u;b.j.E-=u;b.j.b-=y;b.j.D-=y}r(b,function(b,a){B[a]&&B[a](R,b)})}f.zc(z-l,g-l)}z=g;a.v(A,function(a){a.pb(g)});var N=k,M=t;k=t;G=d;f.ic(N,M)}}function F(a,b){h=e.max(h,a.Kc(h*b,1));A.push(a)}function I(){if(p){var b=c.N(),d=e.min(b-y,80),a=k+d*n;y=b;if(a*n>=m*n)a=m;s(a);if(!x&&a*n>=m*n)M(J);else L(I,i.rb)}}function q(a,b,g){if(!p){p=d;x=g;J=b;a=e.max(a,j);a=e.min(a,h);m=a;n=m<k?-1:1;f.Ic();y=c.N();I()}}function M(a){if(p){x=p=g;f.Mc();a&&a()}}f.Mb=function(a,b,c){q(a?k+a:h,b,c)};f.Pe=function(b,a,c){q(b,a,c)};f.Oe=function(a,b){q(j,a,b)};f.Re=function(a,b){q(h,a,b)};f.lb=function(){M()};f.ff=function(a){q(a)};f.Ce=function(){return k};f.se=function(){return m};f.lc=function(){return z};f.pb=s;f.Xc=function(){s(j)};f.gc=function(){s(h)};f.T=function(a){s(k+a)};f.Ue=function(){return p};f.zd=function(a){o=a};f.Kc=Q;f.Cc=K;f.Pc=function(a){F(a,0)};f.Pd=function(a){F(a,1)};f.td=function(){return j};f.Qd=function(){return h};f.ic=c.ob;f.Ic=c.ob;f.Mc=c.ob;f.zc=c.ob;i=a.G({rb:10},i);o=i.Rd;B=c.G({},D(),i.kd);j=l=t;h=u=t+v;var P=i.n||{},O=i.u||{};C=a.G({mb:a.Lc(i.f)&&i.f||b.zb},i.f)}},b={o:function(a){return a},zb:function(a){return-e.cos(a*e.PI)/2+.5},F:function(a){return a*a},x:function(a){return-a*(a-2)},pd:function(a){return(a*=2)<1?1/2*a*a:-1/2*(--a*(a-2)-1)},C:function(a){return a*a*a},K:function(a){return a*a*a*a},wb:function(a){return 1-b.Xd(1-a)},Xd:function(a){return a<1/2.75?7.5625*a*a:a<2/2.75?7.5625*(a-=1.5/2.75)*a+.75:a<2.5/2.75?7.5625*(a-=2.25/2.75)*a+.9375:7.5625*(a-=2.625/2.75)*a+.984375},Y:function(a){return 1-e.cos(a*e.PI*2)},M:function(a){return e.sin(a*e.PI*2)},L:function(a){return 1-((a*=2)<1?(a=1-a)*a*a:(a-=1)*a*a)},w:function(a){return(a*=2)<1?a*a*a:(a=2-a)*a*a}},m={Dc:1,Ed:2,Bd:3};function y(b,B){var c=this;p.call(c);b=a.Cb(b);var r,y,x,q,k=-1,g,l,f,u,v,j,i,o,n,A=[],w=[];function t(a){a!=-1&&w[a].Fd(a==k)}function z(a){c.Ab(m.Dc,a*l)}c.Lb=b;c.rc=function(a){if(a!=q){var d=k,b=e.floor(a/l);k=b;q=a;t(d);t(b);c.Ab(m.Ed,a)}};c.qc=function(c){a.O(b,c)};var s;c.tc=function(F){if(!s){r=e.ceil(F/l);k=-1;var q=o+u,t=n+v,E=e.ceil(r/f)-1;y=o+q*(!j?E:f-1);x=n+t*(j?E:f-1);a.ue(b,"");a.cc(b,y);a.ac(b,x);for(var g=0;g<r;g++){var D=a.ge();a.ye(D,g+1);var p=a.Kd(i,"NumberTemplate",D,d);a.kb(p,"absolute");var B=e.floor(g/f);a.nb(p,!j?q*B:g%f*q);a.Ub(p,j?t*B:g%f*t);a.H(b,p);A[g]=p;a.z(p,"click",a.fb(h,z,g));w[g]=a.Hd(p,d)}c.Ab(m.Bd);s=d}};c.Kb=g=a.G({jc:0,mc:0,kc:1},B);i=a.eb(b,"prototype");o=a.dc(i);n=a.fc(i);a.hc(b,i);l=g.vc||1;f=g.fe||1;u=g.jc;v=g.mc;j=g.kc-1}function s(e,f,d){var b=this;n.call(b,0,0);a.dc(e);a.fc(e);}var r,f={},t;new function(){var q=0,o=1,w=2,v=3,I=1,H=2,J=4,G=8,N=256,O=512,M=1024,L=2048,z=L+I,y=L+H,E=O+I,C=O+H,D=N+J,A=N+G,B=M+J,F=M+G;function S(a){return(a&H)==H}function T(a){return(a&J)==J}f.r=function(g){for(var e=g.c,f=g.d,k=g.k,l=g.jb,d={},a=0,b=0,i=e-1,j=f-1,h=l-1,c,b=0;b<f;b++)for(a=0;a<e;a++){c=b+","+a;switch(k){case z:d[c]=h-(a*f+(j-b));break;case B:d[c]=h-(b*e+(i-a));break;case E:d[c]=h-(a*f+b);case D:d[c]=h-(b*e+a);break;case y:d[c]=a*f+b;break;case A:d[c]=b*e+(i-a);break;case C:d[c]=a*f+(j-b);break;default:d[c]=b*e+a}}return d};f.A=function(d){var l=d.c,m=d.d,n=d.k,k=d.jb,h={},i=0,a=0,b=0,e=l-1,f=m-1,g,c,j=0;switch(n){case z:a=e;b=0;c=[w,o,v,q];break;case B:a=0;b=f;c=[q,v,o,w];break;case E:a=e;b=f;c=[v,o,w,q];break;case D:a=e;b=f;c=[o,v,q,w];break;case y:a=0;b=0;c=[w,q,v,o];break;case A:a=e;b=0;c=[o,w,q,v];break;case C:a=0;b=f;c=[v,q,w,o];break;default:a=0;b=0;c=[q,w,o,v]}i=0;while(i<k){g=b+","+a;if(a>=0&&a<l&&b>=0&&b<m&&typeof h[g]=="undefined")h[g]=i++;else switch(c[j++%c.length]){case q:a--;break;case w:b--;break;case o:a++;break;case v:b++}switch(c[j%c.length]){case q:a++;break;case w:b++;break;case o:a--;break;case v:b--}}return h};f.B=function(d){var l=d.c,m=d.d,n=d.k,k=d.jb,i={},j=0,a=0,b=0,e=l-1,f=m-1,h,c,g=0;switch(n){case z:a=e;b=0;c=[w,o,v,o];break;case B:a=0;b=f;c=[q,v,o,v];break;case E:a=e;b=f;c=[v,o,w,o];break;case D:a=e;b=f;c=[o,v,q,v];break;case y:a=0;b=0;c=[w,q,v,q];break;case A:a=e;b=0;c=[o,w,q,w];break;case C:a=0;b=f;c=[v,q,w,q];break;default:a=0;b=0;c=[q,w,o,w]}j=0;while(j<k){h=b+","+a;if(a>=0&&a<l&&b>=0&&b<m&&typeof i[h]=="undefined"){i[h]=j++;switch(c[g%c.length]){case q:a++;break;case w:b++;break;case o:a--;break;case v:b--}}else{switch(c[g++%c.length]){case q:a--;break;case w:b--;break;case o:a++;break;case v:b++}switch(c[g++%c.length]){case q:a++;break;case w:b++;break;case o:a--;break;case v:b--}}}return i};f.I=function(h){var m=h.c,n=h.d,e=h.k,l=h.jb,j={},k=0,c=0,d=0,f=m-1,g=n-1,o=l-1,i;switch(e){case z:case C:case E:case y:var a=0,b=0;break;case A:case B:case D:case F:var a=f,b=0;break;default:e=F;var a=f,b=0}c=a;d=b;while(k<l){i=d+","+c;if(T(e)||S(e))j[i]=o-k++;else j[i]=k++;switch(e){case z:case C:c--;d++;break;case E:case y:c++;d--;break;case A:case B:c--;d--;break;case F:case D:default:c++;d++}if(c<0||d<0||c>f||d>g){switch(e){case z:case C:a++;break;case A:case B:case E:case y:b++;break;case F:case D:default:a--}if(a<0||b<0||a>f||b>g){switch(e){case z:case C:a=f;b++;break;case E:case y:b=g;a++;break;case A:case B:b=g;a--;break;case F:case D:default:a=0;b++}if(b>g)b=g;else if(b<0)b=0;else if(a>f)a=f;else if(a<0)a=0}d=b;c=a}}return j};f.cb=function(h){var a=h.c||1,b=h.d||1,i={},c,d,f,g,j;f=a<b?(b-a)/2:0;g=a>b?(a-b)/2:0;j=e.round(e.max(a/2,b/2))+1;for(c=0;c<a;c++)for(d=0;d<b;d++)i[d+","+c]=j-e.min(c+1+f,d+1+g,a-c+f,b-d+g);return i};f.gb=function(f){var c=f.c||1,d=f.d||1,g={},a,b,h;h=e.round(e.min(c/2,d/2))+1;for(a=0;a<c;a++)for(b=0;b<d;b++)g[b+","+a]=h-e.min(a+1,b+1,c-a,d-b);return g};f.le=function(c){for(var g={},d=[],a,b,f=0;f<c.d;f++)for(a=0;a<c.c;a++)d.push({ke:f+","+a,ld:e.ceil(1e5*e.random())%13});d.sort(function(a,b){return a.ld-b.ld});for(var b=0;b<c.jb;b++)g[d[b].ke]=b;return g};f.Z=function(c){for(var d=c.c||1,f=c.d||1,g={},a,h=d/2-.5,i=f/2-.5,b=0;b<d;b++)for(a=0;a<f;a++)g[a+","+b]=e.round(e.sqrt(e.pow(b-h,2)+e.pow(a-i,2)));return g};f.Bb=function(c){for(var d=c.c||1,f=c.d||1,g={},a,h=d/2-.5,i=f/2-.5,b=0;b<d;b++)for(a=0;a<f;a++)g[a+","+b]=e.round(e.min(e.abs(b-h),e.abs(a-i)));return g};f.qb=function(f){for(var g=f.c||1,h=f.d||1,i={},a,c=g/2-.5,d=h/2-.5,j=e.max(c,d)+1,b=0;b<g;b++)for(a=0;a<h;a++)i[a+","+b]=e.round(j-e.max(c-e.abs(b-c),d-e.abs(a-d)))-1;return i};function Q(d){var f=0,h=d.g,c=[],b=h(d);if(d.V){a.v(b,function(a){f=e.max(f,a)});a.v(b,function(a,c){b[c]=f-a})}a.v(b,function(b,d){var a=c[b];if(!a){c[b]=a=[];a.wc=b}a.push(d)});var g=[].concat(c);g.sort(function(a,b){return a.wc-b.wc});return{xe:b,ze:g}}var K=[];function P(d){var c={rb:40,a:200,e:0,c:1,d:1,m:0,q:0,j:0,T:g,l:g,i:0,V:g,g:f.le,k:F,t:{J:0,y:0},f:b.zb,n:{},Db:[],u:{}};a.G(c,d);c.jb=c.c*c.d;if(a.Lc(c.f))c.f={mb:c.f};c.hd=e.round(c.a/c.rb);c.gd=R(c);c.me=function(b,a){b/=c.c;a/=c.d;var f=b+"x"+a;if(!c.Db[f]){c.Db[f]={U:b,R:a};for(var d=0;d<c.c;d++)for(var e=0;e<c.d;e++)c.Db[f][e+","+d]={b:e*a,E:d*b+b,D:e*a+a,h:d*b}}return c.Db[f]};return c}function R(d){var c=d.f;if(!c.mb)c.mb=b.zb;var f=d.hd,g=c.vb;if(!g){var h=a.G({},d.f,d.n);g=c.vb={};a.v(h,function(n,l){var b=c[l]||c.mb,j=d.n[l]||1;if(!a.te(b.vb))b.vb=[];var h=b.vb[f]=b.vb[f]||[];if(!h[j]){h[j]=[0];for(var k=1;k<=f;k++){var i=k/f*j,m=e.floor(i);if(i!=m)i-=m;h[j][k]=b(i)}}g[l]=h})}return g}t=function(J,S,C,Y,b,t,r,bb,cb,O){b=K[b.W]=K[b.W]||P(b);var o=this,k=Y.Hb,p=b.l,m,M,w,q,T={},s={},F={},i,f,D,j,A,x,z,y,E,G,H=h,X,v,u,B=d,n=g,U=g,R,I=b.t.J||0,L=b.t.y||0,V=cb.qe;function eb(){if(V){k=Y.sc;b.q=0}k=a.P(k,d);a.O(k);a.nb(k,0);j=b.me(t,r);G=Q(b);for(w=0;w<b.d;w++)for(c=0;c<b.c;c++){m=w+","+c;var K=g,N=g;if(I&&c%2){if(l.Yc(I))K=!K;if(l.ad(I))N=!N}if(L&&w%2){if(l.Yc(L))K=!K;if(l.ad(L))N=!N}b.b=b.b||b.j&4;b.D=b.D||b.j&8;b.h=b.h||b.j&1;b.E=b.E||b.j&2;A=N?b.D:b.b;x=N?b.b:b.D;z=K?b.E:b.h;y=K?b.h:b.E;b.j=A||x||z||y;if(b.jf)b.m=2;D={};f={b:0,h:0,m:1,U:t,R:r};i=a.G({},f);M=a.G({},j[m]);if(b.m)f.m=2-b.m;if(b.q==d)b.q=1;if(b.q||b.s){f.q=b.q?b.q-1:1;i.q=1;f.s=b.s?360:0;i.s=0}else{if(b.j){var O=b.ab||1,n=M.S={};if(A&&x){n.b=j.R/2*O;n.D=-n.b}else if(A)n.D=-j.R*O;else if(x)n.b=j.R*O;if(z&&y){n.h=j.U/2*O;n.E=-n.h}else if(z)n.E=-j.U*O;else if(y)n.h=j.U*O}D.j=M;i.j=j[m]}if(b.i){var B=b.i;if(!K)B=l.de(B);if(!N)B=l.ce(B);var ab=b.bb||1,cb=b.p||1;if(l.Vd(B))f.h+=t*ab;else if(l.Ud(B))f.h-=t*ab;if(l.Td(B))f.b+=r*cb;else if(l.Yd(B))f.b-=r*cb}a.v(f,function(b,c){if(a.Vb(b))if(b!=i[c])D[c]=b-i[c]});T[m]=p?i:f;var Z=e.round(G.xe[m]*b.e/b.rb);s[m]=new Array(Z);s[m].ne=Z;var P=b.hd;for(E=0;E<=P;E++){var h={};a.v(D,function(f,c){var m=b.gd[c]||b.gd.mb,l=m[b.n[c]||1],k=b.u[c]||[0,1],d=(E/P-k[0])/k[1]*P;d=e.round(e.min(P,e.max(d,0)));var j=l[P-d];if(a.Vb(f))h[c]=i[c]+f*j;else{var g=h[c]=a.G({},i[c]);g.S=[];a.v(f.S,function(c,b){var a=c*j;g.S[b]=a;g[b]+=a})}});if(i.q)h.Pb={s:h.s||0,Xb:h.q,Ib:t,Eb:r};if(h.j&&b.T){var R=h.j.S,W=(R.b||0)+(R.D||0),U=(R.h||0)+(R.E||0);h.h=(h.h||0)+U;h.b=(h.b||0)+W;h.j.h-=U;h.j.E-=U;h.j.b-=W;h.j.D-=W}h.Sb="";s[m].push(h)}}var o=bb;if(C)if(V)o=C.sc;else if(C.oe())o=C.Hb;o=a.P(o,d);a.O(o);a.nb(o,0);if(p)H=o;else{J.uc(o);H=k}X=G.ze;a.v(X,function(c){if(c)for(var e=0;e<c.length;e++){var b=c[e];q=a.P(H,d);a.X(q,T[b]);a.yb(q,"hidden");a.kb(q,"absolute");S.pe(q);F[b]=q;a.O(F[b],p)}});p&&J.uc(k);v=a.N();u=1;a.v(s,function(a){u=e.max(a.length,u)});_FrameCurrent=0}function fb(){if(B&&!n){var c=e.ceil((a.N()-v)/b.rb)-1;if(c>=u-1){!p&&J.uc(k);S.Gb();B=g}else a.v(s,!B||n?a.ob:function(d,f){var b=c;if(p){b=u-c-1;b=e.max(b,d.ne)}b=e.min(b,d.length-1);d[b]&&a.Od(F[f],d[b])})}return B}function ab(c){function b(){if(!U)if(n||fb())a.e(b,c);else db()}a.e(b,c)}var W;function db(){if(!W){W=d;O&&O()}}o.lb=function(){if(!R){R=d;v-=2e6;return d}};o.Mb=function(){ab(b.rb)};o.We=function(){eb()};var Z;o.oc=function(){if(!n){n=d;Z=a.N()-v}};o.Ye=function(){U=d};o.Ze=function(){if(n){n=g;v=a.N()-Z}};o.Fc=b};function x(v,Ib){function Rb(){var a=0;if(C)a=yb%C.length;else a=e.floor(e.random()*C.length);yb++;C[a].W=a;return C[a]}function Eb(e,d){var b=o>0?o:c.db;a.nb(e,db*d*(b&1));a.Ub(e,eb*d*(b>>1&1))}function sb(b){T&&a.Tb(b)}function zb(){var c=this,b=a.nd();a.X(b,F);a.kb(b,"absolute");c.Lb=b;c.uc=function(f){var c=a.P(f,d);a.od(b);a.H(b,c)};c.pe=function(c){a.H(b,c)};c.Gb=function(){a.od(b)}}function Vb(u,f,q){var b=this;n.call(b,-z,z+1,{});var c,o,m,j,r,i,k,p;function v(c){p=d;j&&a.Jb(j);c&&c(b)}function w(){o=c.Ue();c.lb()}function y(b,a){o=g;a!=q&&c.gc()}b.W=q;b.Rb=function(c){if(b.Hb)if(!p){var d=b.Hb.src;j&&Tb&&a.O(j);return a.Rb(d,a.fb(h,v,c))}c&&c(b)};b.oe=function(){return p};b.Ve=function(b){a.v(r,function(c){a.z(c,"click",b)})};b.bf=function(){a.Jb(f)};b.bd=function(){a.O(f)};b.Sc=function(){if(!c||c.ub!=l.ub){c&&c.Xc();var b=a.Ae(f,"caption");c=new l.ib(f,b,l);c.gc();c.ub=l.ub=l.ub||a.N()}return c};b.fd=function(a,d){b.bd();if(l.sb==2&&d||l.sb==1){b.Sc().gc();c.Oe(a)}else a&&a()};b.Te=function(a,b){if(l.sb==2&&b||l.qd==1)c.Re(a);else a&&a()};b.zc=function(g,b){var f=z-b;Eb(m,f);if(!t||!o){var a;if(ab(q)){if(l.qd==2)a=d}else if(!l.sb)c.Xc();else if(l.sb==2)a=d;a&&c.pb((c.Qd()-c.td())*e.abs(b-1)*.6+c.td())}};var s=a.eb(f,"thumb");if(s){a.P(s,d);a.Jb(s)}a.O(f);if(x)j=a.P(x,d);r=a.Fe(f,"A",d);i=a.eb(f,"image");if(i){if(i.tagName=="A"){k=a.P(i,g);a.z(k,"click",sb);a.X(k,F);a.Fb(k,"block");a.bc(k,0);a.Ec(k,"#000");i=a.Ee(i,"IMG");i.border=0}a.X(i,F)}b.Hb=i;b.Qe=k;b.sc=f;b.Nb=m=W();a.H(m,f);j&&a.H(m,j);b.Rb(a.ob);b.Sc();u.ec(1,y);u.ec(2,w)}function Ub(){var s=this;p.call(s);var r=W(),m=[],l,u,Q,ib="mousedown",E="mousemove",rb="mouseup",cb="mouseup";p.call(s);function Ob(b){if(!N)Nb(b);else!G&&a.Tb(b)}var v,K,tb;function Nb(b){var f=t;a.N();K=w;tb=q.se();q.lb();if(!K)o=0;T=g;t=d;if(l){I();l.oc();J=d}if(G){var e=b.touches[0];lb=e.clientX;mb=e.clientY}else{var c=a.cd(b);lb=c.x;mb=c.y;a.Tb(b)}D=0;v=R.lc();!f&&a.z(i,E,Gb);s.Ab(2)}function Gb(h){var b;if(G){var g=h.touches;if(g&&g.length>0)b=new k(g[0].clientX,g[0].clientY)}else b=a.cd(h);if(b){var d=b.x-lb,f=b.y-mb;if(!o){if(c.Q==3)if(e.abs(d)>=e.abs(f))o=1;else o=2;else{o=c.Q;if(G&&(e.abs(f)-e.abs(d))*(o==1?1:-1)>3)o=-1}if(e.floor(v)!=v)o=c.db}if(o==1){Q=v-d/db;D=d}else{Q=v-f/eb;D=f}if(o>0){a.Tb(h);if(!w)q.ud(v);else q.wd(Q)}}}function Ib(){if(t){a.N();a.we(i,E,Gb);T=D;q.lb();if(!T&&K)q.ff(tb);else{var h=f;if(h==-1)h=0;var d=R.Ce(),b=h;if(!D)b=d;else if(e.abs(D)>=c.pc){b=e.floor(d);if(D<0)b+=1}q.id(d,b,e.abs(b-d)*ob)}t=g}}function ub(a){f=O(a);Cb=m[f];Fb(f);return f}function kb(g,n,k){if(wb){q.lb();A.md();var c=k;if(!c)c=ob;var l=R.jd();if(l.hb||!ab(g)){var i=O(g),j=a.fb(h,Kb,i,m[i],n),b=R.lc(),d=g,f=b==d?0:c*e.abs(d-b);f=e.min(f,ob*1.5);q.id(b,d,f,j)}}}function S(a){if(gb)if(!Bb){Bb=d;Z=0}else Z=a||Pb;else Z=6e8}function Wb(a){o=0;var b=f;if(ab(a)){if(l){I(l.Fc.xb);l.Ze()}}else{A.Gb();ub(a)}B=d;H=0;J=g;A.md();m[f].fd(function(){S();B=g});s.Ab(1,b,f)}function Kb(c,b,a){a&&a()}function Fb(b,c){a.v(P,function(a){a.rc(O(b),c)})}function yb(){B=g;if(bb){J=g;H=1;A.vd(O(f+1))}else{var a=f;if(a==-1)a=0;else a+=Ab;kb(a)}}function Lb(){B=d;if(f==-1)yb();else m[f].Te(yb,bb)}function Jb(){if(Y&&gb&&!t&&!w&&!B&&!N&&(!H||J)||qb){Z-=60;if(Z<0&&(!Db||V)){qb=g;Lb()}}a.e(Jb,60)}function Ub(f){var b=this,g=f.length;n.call(b,0,0,{Rd:g});b.jb=g;b.jd=function(){var a=b.lc(),g=e.floor(a),d=f[g].W,c=a-e.floor(a);return{W:d,hb:c}};b.ic=function(c,a){var b=e.floor(a);if(b!=a&&a>c)b++;Fb(b,d)};a.v(f,function(a){a.zd(g);b.Pd(a);a.Cc(xb/(c.db==1?db:eb))})}function Tb(){var e=this,o=new zb,j=new zb,i=W();a.yb(i,"");var c;n.call(e,-1,2,{f:b.o,kd:{hb:Eb}},i,{hb:1},{hb:-1});function s(a){if(Y&&gb&&!t&&!w&&!N){f=O(a);l.Mb()}}function p(b,a){I();B=d;J=g;H=0;k();a.fd(function(){S();B=g},d)}function k(){if(!u){u=W();a.Ec(u,"#000");a.bc(u,0);a.H(r,u)}var b=c&&c.Qe,d=Hb<2||!H||w||t||!b;a.Zd(u);if(!d)a.H(u,b);a.O(u,H==1||J)}e.Nb=i;e.vd=function(b){c=m[b];var d=b;e.Kc(d,1);e.pb(d);var g=a.fb(h,p,b,c),f=Rb();l=new jb(o,j,Cb,c,f,fb,pb,x,L,g);l.We();I(f.xb);c.bf();q.Tc(d);ub(b);k();c.Rb(a.fb(h,s,b,c))};e.Zb=function(){if(l){I();l.oc()}};e.Gb=function(){if(l){l.Ye();j.Gb();c.bd()}};e.md=k;a.H(i,o.Lb);a.H(i,j.Lb)}function Mb(k,l){var a=this,e,f,i,b,j,c;n.call(a,-1e8,2e8);a.Ic=function(){w=d};a.Mc=function(){w=g;j=g;var a=k.jd();a.hb==0&&Wb(a.W,m[a.W])};a.ic=function(g,d){var a;if(j)a=c;else{a=f;if(i)a=d/i*(f-e)+e}b.pb(a)};a.id=function(c,d,b,g){e=c;f=d;i=b;a.pb(0);a.Pe(b,g)};a.ud=function(b){j=d;c=b;a.Mb(b,h,d)};a.wd=function(a){c=a};a.Tc=function(a){!w&&b.pb(a)};b=new n(-1e8,2e8);b.Pc(k);b.Pc(l)}s.yd=function(a,c,b){if(!t&&!ab(a)){if(l){I();l.oc()}kb(a,c,b)}};s.Zb=function(){A.Zb()};s.Rc=function(){S(1)};s.Dd=m;A=new Tb;a.H(M,A.Nb);s.Lb=r;if(c.db==1)a.cc(r,db*z-U);else a.ac(r,eb*z-U);a.yb(r,"hidden");for(var F=0;F<X.length;F++){var Qb=X[F],nb=new Vb(s,Qb,F);nb.Ve(sb);a.H(r,nb.Nb);m.push(nb)}R=new Ub(m);q=new Mb(R,A);q.Tc(0);a.re(r,"move");a.H(y,r);if(Sb){if(j.navigator.msPointerEnabled){G=d;ib="MSPointerDown";E="MSPointerMove";rb="MSPointerUp";cb="MSPointerCancel";if(c.Q){var hb="none";if(c.Q==1)hb="pan-y";else if(c.Q==2)hb="pan-x";a.ie(r.style,"-ms-touch-action",hb)}}else if("ontouchstart"in j||"createTouch"in i){G=d;ib="touchstart";E="touchmove";rb="touchend";cb="touchcancel"}a.z(r,ib,Ob);a.z(i,rb,Ib);a.z(i,cb,Ib)}a.z(j,"load",Jb);gb=d}var r=this,v=a.Cb(v),c=a.G({Qc:g,Wc:g,ed:1,dd:3e3,Yb:400,pc:20,Wb:0,tb:1,Ob:0,Zc:1,db:1,Q:1},Ib),L=c.Wd,l=a.G({ib:s,sb:1,qd:1},c.hf),kb=c.ae,hb=c.be,ib=c.gf,cb=c.Zc,y=a.eb(v,"slides",h,cb),x=a.eb(v,"loading",h,cb),ub=a.eb(v,"navigator",h,cb),rb=a.eb(v,"thumbnavigator",h,cb),Ob=a.dc(y),Nb=a.fc(y);if(c.tb>1||c.Ob)c.Q&=c.db;var F,X=a.Jc(y),Bb,Cb,E=X.length,fb=c.Sd||Ob,pb=c.Jd||Nb,U=c.Wb,db=fb+U,eb=pb+U,z=c.tb,f=-1,M,Q,o,G,P=[],Gb,tb,vb,Tb=c.Qc,Hb,qb,Y,Ab,Db=c.rd,Pb=c.dd,ob=c.Yb,jb,C,bb,xb,wb=z<E,Sb=wb&&c.Q,T,yb=0,V=1,gb,Z=0,H,J,w,N,B,t,lb=0,mb=0,D,R,A,q;function W(){var b=a.nd();a.X(b,F);a.kb(b,"absolute");return b}function O(a){return(a%E+E)%E}function ab(a){return O(a)==f}function S(d,c,a){var b=Q;b.yd(d,c,a)}function Mb(a){S(a)}function nb(){a.v(P,function(a){a.qc(a.Kb.Id>V)})}function Kb(b){b=a.nc(b);var c=b.target?b.target:b.srcElement,d=b.relatedTarget?b.relatedTarget:b.toElement;if(!a.xc(v,c)||a.xc(v,d))return;V=1;nb()}function Jb(){V=0;nb()}function I(b){a.yb(M,b?"":"hidden")}function Lb(){F={U:fb,R:pb,b:0,h:0};a.v(X,function(b){a.X(b,F);a.kb(b,"absolute");a.yb(b,"hidden");a.Jb(b)});x&&a.X(x,F)}r.lb=function(){Y=g;Q.Zb()};var Fb;r.Mb=function(c){var b=Fb=a.N();a.e(function(){if(b==Fb){Y=d;Q.Rc()}},c||0)};r.Kb=Ib;Lb();M=W();a.nb(M,a.Me(y));a.Ub(M,a.ef(y));a.Nc(a.yc(y),M,y);if(L){Hb=L.Md;jb=L.ib;C=L.sd;bb=z==1&&E>1&&jb}xb=bb||z>=E?0:c.Ob;x&&a.O(x,g);Q=new Ub;if(ub&&kb){Gb=new kb.ib(ub,kb);P.push(Gb)}if(hb){tb=new hb.ib(v,hb);P.push(tb)}if(rb&&ib){vb=new ib.ib(rb,ib);P.push(vb)}a.v(P,function(a){a.tc(E,Q.Dd,x);a.ec(m.Dc,Mb)});a.z(v,"mouseout",Kb);a.z(v,"mouseover",Jb);nb();c.Nd&&a.z(i,"keydown",function(a){if(a.keyCode==u.Cd)S(f-1);else a.keyCode==u.Ad&&S(f+1)});Q.Rc();qb=d;Ab=c.ed;Y=c.Wc}r=x};var x=[{a:2e3,c:8,d:4,j:15,u:{b:[0,.5],j:[.5,.5]},i:8,l:d,g:f.r,t:{J:12},ab:.5},{a:2e3,c:8,d:4,j:15,u:{b:[0,.5],j:[.5,.5]},i:8,g:f.r,t:{J:12},ab:.5},{a:1200,c:6,d:6,j:15,u:{h:[0,.8],b:[0,.8],j:[.8,.2]},i:10,g:f.r,t:{J:15,y:15},f:{h:b.C,b:b.C,j:b.zb},ab:.5},{a:1200,c:6,d:6,j:15,u:{h:[0,.8],b:[0,.8],j:[.8,.2]},l:d,i:10,g:f.r,t:{J:15,y:15},f:{h:b.C,b:b.C,j:b.zb},ab:.5},{a:1800,s:d,u:{s:[0,.3]},m:2,n:{s:.5}},{a:1800,s:d,u:{s:[0,.3]},l:d,m:2,n:{s:.5}},{a:1800,q:3,u:{q:[0,.3]},m:2},{a:1800,q:3,u:{q:[0,.3]},l:d,m:2},{a:1800,u:{h:[0,.3]},i:1,bb:.3,m:2,xb:d},{a:1800,u:{h:[0,.3]},l:d,i:1,bb:.3,m:2,xb:d},{a:5e3,e:100,c:12,j:15,u:{h:[0,.8],b:[0,.8]},i:6,g:f.r,k:514,f:{h:b.x,b:b.M,j:b.x},p:.5,ab:.8,n:{b:4}},{a:5e3,e:100,c:12,j:15,u:{h:[0,.8],b:[0,.8]},l:d,i:6,g:f.r,k:514,f:{h:b.x,b:b.M,j:b.x},p:.5,ab:.8,n:{b:4}},{a:5e3,e:100,c:12,j:15,u:{h:[0,.8],b:[0,.8]},i:6,g:f.r,k:514,f:{h:b.x,b:b.L,j:b.x},p:.5,ab:.8,n:{b:4}},{a:5e3,e:100,c:12,j:15,u:{h:[0,.8],b:[0,.8]},l:d,i:6,g:f.r,k:514,f:{h:b.x,b:b.L,j:b.x},p:.5,ab:.8,n:{b:4}},{a:1500,e:60,q:1,i:9,g:f.I,f:{h:b.w,b:b.w,m:b.o},bb:.3,p:.3,m:2,n:{h:.8,b:.8}},{a:1500,e:60,q:1,l:d,i:9,g:f.I,f:{h:b.w,b:b.w,m:b.o},bb:.3,p:.3,m:2,n:{h:.8,b:.8}},{a:1500,e:20,c:8,d:4,j:15,i:9,g:f.I,f:{h:b.w,b:b.w},bb:.3,p:.3,n:{h:.8,b:.8}},{a:1500,e:20,c:8,d:4,j:15,l:d,i:9,g:f.I,f:{h:b.w,b:b.w},bb:.3,p:.3,n:{h:.8,b:.8}},{a:1800,e:30,c:10,d:5,j:15,i:1,g:f.I,k:2050,f:b.pd,bb:1,xb:d,n:{b:.8}},{a:1800,e:30,c:10,d:5,j:15,l:d,i:1,g:f.I,k:2050,f:b.pd,bb:1,xb:d,n:{b:.8}},{a:1800,q:3,s:d,f:b.o,m:2},{a:1800,q:3,s:d,l:d,f:b.o,m:2},{a:1800,q:1,s:d,f:b.o,m:2},{a:1800,q:1,s:d,l:d,f:b.o,m:2},{a:1200,e:30,c:8,d:4,j:15,l:d,g:f.I,k:2049,f:b.x},{a:500,e:50,c:8,d:4,j:15,l:d,g:f.A,f:b.x},{a:1800,e:600,c:8,d:4,j:15,l:d,g:f.cb,f:b.x},{a:1800,e:600,c:8,d:4,j:15,l:d,g:f.qb,f:b.x},{a:1800,e:800,c:8,d:4,j:15,l:d,g:f.gb,f:b.x},{a:1800,e:600,c:8,d:4,j:15,l:d,g:f.Bb,f:b.x},{a:1800,e:800,c:8,d:4,j:15,l:d,g:f.Z,k:2049},{a:300,e:60,c:8,d:4,j:15,l:d,g:f.B,f:b.x},{a:1e3,e:30,c:8,d:4,j:15,l:d,f:b.x},{a:1e3,e:30,c:8,d:4,l:d,i:2,k:260,f:b.K},{a:1e3,e:30,c:8,d:4,l:d,i:4,k:260,f:b.K},{a:1e3,e:30,c:8,d:4,l:d,i:6,k:260,t:{J:3,y:12},f:b.K},{a:1e3,e:100,c:8,d:4,l:d,i:2,g:f.B,k:513,f:b.C},{a:1e3,e:100,c:8,d:4,l:d,i:4,g:f.B,f:b.C},{a:1e3,e:100,c:8,d:4,l:d,i:6,g:f.B,k:1028,t:{J:12,y:3},f:b.C},{a:1e3,e:100,c:8,d:4,l:d,i:2,V:d,g:f.A,k:513,f:b.C},{a:1e3,e:100,c:8,d:4,l:d,i:4,V:d,g:f.A,k:513,f:b.C},{a:1e3,e:100,c:8,d:4,l:d,i:6,V:d,g:f.A,k:513,t:{J:12,y:3},f:b.C},{a:2e3,e:30,c:8,d:4,i:1,f:b.F},{a:1e3,e:30,c:8,d:4,i:8,f:b.F},{a:1800,e:60,c:8,d:4,i:6,t:{J:3,y:12},f:b.F},{a:1e3,e:100,c:8,d:4,i:1,g:f.B,k:513,f:b.C},{a:1e3,e:100,c:8,d:4,i:8,g:f.B,k:264,f:b.C},{a:1e3,e:100,c:8,d:4,i:5,g:f.B,k:1028,t:{J:3,y:12},f:b.F},{a:1e3,e:100,c:8,d:4,i:1,V:d,g:f.A,k:513,f:b.C},{a:1e3,e:100,c:8,d:4,i:8,V:d,g:f.A,k:2049,f:b.C},{a:1e3,e:100,c:8,d:4,i:8,V:d,g:f.A,k:513,f:b.C},{a:1200,e:30,c:8,d:4,j:15,g:f.I,k:2049,f:b.F},{a:1e3,c:3,d:2,j:15,g:f.r,f:b.wb},{a:300,e:30,c:8,d:4,j:15,g:f.A,f:b.F},{a:1800,e:200,c:8,d:4,j:15,g:f.cb,f:b.F},{a:1800,e:200,c:8,d:4,j:15,g:f.qb,f:b.F},{a:1800,e:600,c:8,d:4,j:15,g:f.gb,f:b.F},{a:2500,e:500,c:8,d:4,j:15,g:f.Bb,f:b.F},{a:300,e:60,c:8,d:4,j:15,g:f.B,f:b.F},{a:1e3,e:30,c:8,d:4,j:15,f:b.F},{a:800,e:40,c:8,d:4,g:f.I,k:513,m:2},{a:1800,e:400,c:8,d:4,g:f.Bb,m:2},{a:1800,e:400,c:8,d:4,g:f.gb,m:2},{a:1e3,e:60,c:8,d:4,m:2},{a:3e3,e:500,c:8,d:4,g:f.Z,m:2},{a:1500,e:80,c:8,d:4,g:f.A,m:2},{a:800,e:120,c:8,d:4,g:f.B,k:264,m:2},{a:5e3,e:100,c:8,d:4,l:d,i:6,g:f.r,k:260,f:{h:b.o,b:b.M,m:b.o},p:.5,n:{b:4}},{a:5e3,e:100,c:8,d:4,l:d,i:6,g:f.A,k:260,f:{h:b.o,b:b.M},p:.5,n:{b:4}},{a:3e3,e:100,c:8,d:4,l:d,i:5,g:f.B,k:260,t:{y:3},f:{h:b.o,b:b.M},p:.5,n:{b:2}},{a:5e3,e:100,c:8,d:4,l:d,i:6,g:f.cb,k:260,f:{h:b.o,b:b.M},p:.5,n:{b:4}},{a:3e3,e:100,c:8,d:4,l:d,i:6,g:f.gb,k:260,f:{h:b.o,b:b.M},p:.5,n:{b:4}},{a:5e3,e:100,c:8,d:4,l:d,i:6,g:f.Z,k:260,f:{h:b.o,b:b.M},p:.5,n:{b:4}},{a:5e3,e:80,c:8,d:4,l:d,i:6,g:f.Bb,k:260,f:{h:b.o,b:b.M},p:.5,n:{b:4}},{a:5e3,e:80,c:8,d:4,l:d,i:6,g:f.qb,k:260,f:{h:b.o,b:b.M},p:.5,n:{b:4}},{a:5e3,e:100,c:8,d:4,i:6,g:f.r,k:260,f:{h:b.o,b:b.Y},p:.5,n:{b:4}},{a:5e3,e:100,c:8,d:4,i:6,g:f.A,k:260,f:{h:b.o,b:b.Y},p:.5,n:{b:4}},{a:5e3,e:100,c:8,d:4,i:6,g:f.B,k:260,t:{y:3},f:{h:b.o,b:b.Y},p:.5,n:{b:4}},{a:5e3,e:100,c:8,d:4,i:6,g:f.cb,k:260,f:{h:b.o,b:b.Y},p:.5,n:{b:4}},{a:5e3,e:160,c:8,d:4,i:6,g:f.gb,k:260,f:{h:b.o,b:b.Y},p:.5,n:{b:4}},{a:5e3,e:100,c:8,d:4,i:6,g:f.Z,k:260,f:{h:b.o,b:b.Y},p:.5,n:{b:4}},{a:5e3,e:80,c:8,d:4,i:6,g:f.Bb,k:260,f:{h:b.o,b:b.Y},p:.5,n:{b:4}},{a:5e3,e:80,c:8,d:4,i:6,g:f.qb,k:260,f:{h:b.o,b:b.Y},p:.5,n:{b:4}},{a:5e3,e:100,c:8,d:4,l:d,i:6,g:f.r,k:2049,f:{h:b.o,b:b.L},p:.5,n:{b:4}},{a:5e3,e:100,c:8,d:4,l:d,i:6,g:f.A,k:260,f:{h:b.o,b:b.L},p:.5,n:{b:4}},{a:5e3,e:100,c:8,d:4,l:d,i:6,g:f.B,k:260,f:{h:b.o,b:b.L},p:.5,n:{b:4}},{a:5e3,e:100,c:8,d:4,l:d,i:6,g:f.cb,k:260,f:{h:b.o,b:b.L},p:.5,n:{b:4}},{a:5e3,e:100,c:8,d:4,l:d,i:6,g:f.cb,k:260,t:{y:3},f:{h:b.o,b:b.L},p:.5,n:{b:4}},{a:5e3,e:800,c:8,d:4,l:d,i:6,V:d,g:f.gb,k:260,f:{h:b.o,b:b.L},p:.5,n:{b:4}},{a:5e3,e:100,c:8,d:4,l:d,i:6,g:f.Z,k:260,f:{h:b.o,b:b.L},p:.5,n:{b:4}},{a:5e3,e:100,c:8,d:4,l:d,i:6,g:f.qb,k:260,f:{h:b.o,b:b.L},p:.5,n:{b:4}},{a:3e3,e:60,c:8,d:4,i:9,g:f.r,k:260,f:{h:b.o,b:b.w},p:.5,n:{b:4}},{a:5e3,e:100,c:8,d:4,i:9,g:f.A,k:260,f:{h:b.o,b:b.w},p:.5,n:{b:4}},{a:5e3,e:100,c:8,d:4,i:9,g:f.B,k:260,f:{h:b.o,b:b.w},p:.5,n:{b:4}},{a:5e3,e:100,c:8,d:4,i:9,g:f.cb,k:260,f:{h:b.o,b:b.w},p:.5,n:{b:4}},{a:5e3,e:100,c:8,d:4,i:9,g:f.cb,k:260,t:{y:3},f:{h:b.o,b:b.w},p:.5,n:{b:4}},{a:5e3,e:800,c:8,d:4,i:9,V:d,g:f.gb,k:260,f:{h:b.o,b:b.w},p:.5,n:{b:4}},{a:5e3,e:100,c:8,d:4,i:9,g:f.Z,k:260,f:{h:b.o,b:b.w},p:.5,n:{b:4}},{a:5e3,e:100,c:8,d:4,i:9,g:f.qb,k:260,f:{h:b.o,b:b.w},p:.5,n:{b:4}},{a:600,e:100,c:8,d:4,i:6,g:f.A,k:264,f:{b:b.K,m:b.o},m:2},{a:600,e:100,c:8,d:4,l:d,i:6,g:f.A,k:264,f:{b:b.K,m:b.o},m:2},{a:600,e:60,c:8,d:4,i:6,g:f.B,k:260,t:{y:3},f:{b:b.K,m:b.o},m:2},{a:600,e:60,c:8,d:4,l:d,i:6,g:f.B,k:260,t:{y:3},f:{b:b.K,m:b.o},m:2},{a:600,e:30,c:8,d:4,i:6,g:f.I,k:260,f:{h:b.K,b:b.K,m:b.o},m:2},{a:600,e:30,c:8,d:4,l:d,i:6,g:f.I,k:260,f:{h:b.K,b:b.K,m:b.o},m:2},{a:400,e:100,d:7,j:4,g:f.r},{a:400,e:100,c:10,j:2,g:f.r},{a:1500,d:6,j:4},{a:1500,c:8,j:1},{a:1500,d:6,j:4,T:d},{a:1500,c:8,j:1,T:d},{a:600,e:200,d:7,l:d,g:f.r,m:2},{a:600,e:200,c:10,l:d,g:f.r,m:2},{a:1200,e:120,d:6,j:1,i:2,g:f.r},{a:1200,e:120,c:12,j:8,i:4,g:f.r,k:514},{a:2e3,d:6,j:1,g:f.r,t:{y:3}},{a:2e3,c:12,j:4,g:f.r,t:{J:12}},{a:600,e:80,d:6,l:d,m:2},{a:600,e:80,c:10,l:d,m:2},{a:800,e:150,d:5,j:8,T:d,g:f.Z,k:264,f:b.wb},{a:800,e:150,c:10,j:1,T:d,g:f.Z,k:264,f:b.wb},{a:1e3,m:2},{a:500,i:4,f:b.F},{a:400,i:1,f:b.F},{a:1e3,i:4,f:b.wb},{a:1e3,i:1,f:b.wb}];jssor_slider1_starter=function(a){new r(a,{Qc:d,Wc:d,ed:1,dd:3e3,rd:g,Nd:d,Yb:400,pc:20,Wb:0,tb:1,Ob:0,Zc:1,db:1,Q:3,Wd:{ib:t,sd:x,Md:2,qe:g},ae:{ib:y,Id:2,vc:1,fe:1,jc:0,mc:0,kc:1}})}})(window,document,Math,null,true,false)
+</SCRIPT>
+<!-- Jssor Slider Begin -->
+<div id="jssor_slider1_container" class="slider1" style="position: relative; width: 540px;
+        height: 250px;">
+  <!-- Loading Screen -->
+  <div u="loading" style="position: absolute; top: 0px; left: 0px;">
+    <div style="filter: alpha(opacity=70); opacity=0.7; position: absolute; display: block;
+                background-color: #000000; top: 0px; left: 0px;width: 100%;height:100%;"> </div>
+    <div style="position: absolute; display: block; background: url(../img/loading.gif) no-repeat center center;
+                top: 0px; left: 0px;width: 100%;height:100%;"> </div>
+  </div>
+  <!-- Slides Container -->
+  <div u="slides" style="position: absolute; left: 0px; top: -77px; width: 540px; height: 411px; overflow: hidden;">
+    <div> <img u="image" src="images/img1.jpg" /> </div>
+    <div> <img u="image" src="images/img2.jpg" /> </div>
+    <div> <img u="image" src="images/img3.jpg" /> </div>
+    <div> <img u="image" src="images/img4.jpg" /> </div>
+  </div>
+  <!-- Navigator Skin Begin -->
+  <style>
+            .slider1-N div, .slider1-N div:hover, .slider1-N div.av
+            {
+                background: url(../skin03/sprite-03.png) no-repeat;
+                overflow:hidden;
+                cursor: pointer;
+            }
+            .slider1-N div { background-position: 0px -240px; }
+            .slider1-N div:hover, .slider1-N div.av:hover, .slider1-N div.hv { background-position: -30px -240px; }
+            .slider1-N div.av { background-position: -60px -240px; }
+            .slider1-N div.dn { background-position: -90px -240px; }
+        </style>
+  <div u="navigator" class="slider1-N" style="position: absolute; bottom: 6px; right: 6px;">
+    <div u="prototype" style="POSITION: absolute; WIDTH: 22px; HEIGHT: 22px; text-align:center; line-height:22px; color:White; font-size:14px; left: -86px; top: 109px;">
+      <numbertemplate></numbertemplate>
+    </div>
+  </div>
+  <!-- Navigator Skin End -->
+  <a style="display:none" href="http://slideshow.jssor.com">Javascript Slideshow</a>
+  <!-- Trigger -->
+  <script>
+            jssor_slider1_starter('jssor_slider1_container');
+        </script>
+</div></td>
+          </tr>
+        </table>
+          <table width="400" height="109" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+              <td>welcome</td>
+            </tr>
+          </table></td>
+        <td width="153" align="right" valign="top"><table width="150" height="480" border="0" cellpadding="0" cellspacing="0">
+          <tr>
+            <td height="82" align="center"><img src="images/newarrivals.jpg" width="150" height="78" /></td>
+          </tr>
+          <tr>
+            <td height="300" align="center" bgcolor="#0066FF"><div id="marqueecontainer" onmouseover="copyspeed=pausespeed" onmouseout="copyspeed=marqueespeed">
+              <div id="vmarquee" style="position: absolute; width:144px; left: -5px; top: -7px; height: 1000px;"> <a href="#"><img src="images/page covers/book cover 1.jpg" width="130" height="180" /></a>
+                  <h4><a href="#"><img src="images/page covers/book cover 2.jpg" width="130" height="180" /></a> </h4>
+                <h4><a href="#"><img src="images/page covers/book cover 3.jpg"  width="130" height="180"/></a> </h4>
+                <h4><a href="#"><img src="images/page covers/book cover 4.jpg"  width="130" height="180"/></a> </h4>
+                <h4><a href="#"><img src="images/page covers/book cover 5.jpg" width="130" height="180" /></a> </h4>
+                <h4><a href="#"><img src="images/page covers/book cover 6.jpg" width="130" height="180" /></a> </h4>
+              </div>
+            </div></td>
+          </tr>
+        </table></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td height="30" align="center" bgcolor="416be4"><table width="450" border="0" cellspacing="3" cellpadding="0">
+      <tr>
+        <td align="center"><table width="208" border="0" cellspacing="4" cellpadding="0">
+          <tr>
+            <td align="center" class="style9">&nbsp;</td>
+            <td align="center" class="style9"><strong><a href="index.html" class="style6">HOME</a></strong></td>
+            <td align="center" class="style9"><strong> <a href="contact.html" class="style6">CONTACT</a> </strong></td>
+            <td align="center" class="style9">&nbsp;</td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td height="31" align="center"><span class="style11">Copyright 2013 WWW.Public Library Management System.COM</span></td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+</body>
+</html>
